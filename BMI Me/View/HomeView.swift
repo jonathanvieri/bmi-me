@@ -1,4 +1,4 @@
-        //
+//
 //  HomeView.swift
 //  BMI Me
 //
@@ -9,14 +9,42 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        ZStack {
-            C.darkColors.backgroundColor
-                .ignoresSafeArea(.all)
-            
-            Text("BMI Me")
+        
+        NavigationView {
+            ZStack {
+                C.customColors.backgroundColor
+                    .ignoresSafeArea(.all)
+                
+                VStack {
+                    Text("BMI \nMe")
+                        .font(.system(size: 72))
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(C.customColors.textColor)
+                    
+                    Spacer()
+                    
+                    NavigationLink {
+                        CalculateView()
+                    } label: {
+                        CustomButton(text: "Calculate BMI", buttonColor: C.customColors.buttonColor, textColor: C.customColors.textColor)
+                    }
+                    
+                    Spacer().frame(height: 50)
+                    
+                    NavigationLink {
+                        ResultsView()
+                    } label: {
+                        CustomButton(text: "View Results", buttonColor: C.customColors.buttonColor, textColor: C.customColors.textColor)
+                    }
+                    
+                    Spacer()
+                }
+            }
         }
     }
 }
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

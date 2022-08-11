@@ -9,8 +9,10 @@ import SwiftUI
 
 struct C {
     
-    struct darkColors {
-        static let backgroundColor = Color(red: 0.16, green: 0.17, blue: 0.25)
+    struct customColors {
+        static let backgroundColor = Color(red: 0.05, green: 0.10, blue: 0.16)
+        static let buttonColor = Color(red: 0.85, green: 0.01, blue: 0.16)
+        static let textColor = Color.white
     }
     
 }
