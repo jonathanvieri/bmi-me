@@ -13,6 +13,7 @@ struct C {
         static let backgroundColor = Color(red: 0.05, green: 0.10, blue: 0.16)
         static let buttonColor = Color(red: 0.85, green: 0.01, blue: 0.16)
         static let textColor = Color.white
+        static let boxColor = Color(red: 0.29, green: 0.30, blue: 0.41)
     }
     
 }

@@ -40,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A7DC09E828A9305C0007BE19 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				A7E91A1C28A534E200FE4DD2 /* CustomButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		A7E919EF28A3AB2100FE4DD2 = {
 			isa = PBXGroup;
 			children = (
@@ -87,9 +95,9 @@
 		A7E91A0A28A3ACA700FE4DD2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A7DC09E828A9305C0007BE19 /* Buttons */,
 				A7E91A1028A3B52B00FE4DD2 /* CalculateView.swift */,
 				A7E91A0E28A3B4E900FE4DD2 /* HomeView.swift */,
-				A7E91A1C28A534E200FE4DD2 /* CustomButton.swift */,
 				A7E91A0C28A3AD0000FE4DD2 /* ResultsView.swift */,
 			);
 			path = View;

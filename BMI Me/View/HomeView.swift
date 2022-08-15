@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        
         NavigationView {
             ZStack {
                 C.customColors.backgroundColor
