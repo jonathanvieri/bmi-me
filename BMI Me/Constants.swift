@@ -16,4 +16,11 @@ struct C {
         static let boxColor = Color(red: 0.29, green: 0.30, blue: 0.41)
     }
     
+    struct classificationColors {
+        static let underweight = Color.blue
+        static let normal = Color.green
+        static let overweight = Color.yellow
+        static let obese = Color.orange
+        static let extremelyObese = Color.red
+    }
 }

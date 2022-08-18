@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7DCC4BF28ABA49D0077BE01 /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DCC4BE28ABA49D0077BE01 /* BMI.swift */; };
+		A7DCC4C528ABB3AC0077BE01 /* CalculatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DCC4C428ABB3AC0077BE01 /* CalculatorManager.swift */; };
 		A7E919FC28A3AB2100FE4DD2 /* BMI_MeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E919FB28A3AB2100FE4DD2 /* BMI_MeApp.swift */; };
 		A7E91A0028A3AB2200FE4DD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7E919FF28A3AB2200FE4DD2 /* Assets.xcassets */; };
 		A7E91A0328A3AB2200FE4DD2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7E91A0228A3AB2200FE4DD2 /* Preview Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A7DCC4BE28ABA49D0077BE01 /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
+		A7DCC4C428ABB3AC0077BE01 /* CalculatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorManager.swift; sourceTree = "<group>"; };
 		A7E919F828A3AB2100FE4DD2 /* BMI Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMI Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E919FB28A3AB2100FE4DD2 /* BMI_MeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI_MeApp.swift; sourceTree = "<group>"; };
 		A7E919FF28A3AB2200FE4DD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 		A7E91A0928A3AC9E00FE4DD2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A7DCC4BE28ABA49D0077BE01 /* BMI.swift */,
+				A7DCC4C428ABB3AC0077BE01 /* CalculatorManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,9 +182,11 @@
 				A7E91A1328A3BA9E00FE4DD2 /* Constants.swift in Sources */,
 				A7E91A0F28A3B4E900FE4DD2 /* HomeView.swift in Sources */,
 				A7E91A1D28A534E200FE4DD2 /* CustomButton.swift in Sources */,
+				A7DCC4BF28ABA49D0077BE01 /* BMI.swift in Sources */,
 				A7E91A0D28A3AD0000FE4DD2 /* ResultsView.swift in Sources */,
 				A7E919FC28A3AB2100FE4DD2 /* BMI_MeApp.swift in Sources */,
 				A7E91A1128A3B52B00FE4DD2 /* CalculateView.swift in Sources */,
+				A7DCC4C528ABB3AC0077BE01 /* CalculatorManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

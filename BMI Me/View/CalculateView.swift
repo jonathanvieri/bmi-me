@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct CalculateView: View {
-    @State private var height: Float = 100
-    @State private var weight: Float = 70
+    
+    // Variables
+    @State private var showResultView: Bool = false
+    @State private var userBMI = CalculatorManager(height: 170, weight: 70)
     
     var body: some View {
         GeometryReader { metrics in
@@ -32,11 +34,11 @@ struct CalculateView: View {
                                 .font(.title3.bold())
                                 .foregroundColor(C.customColors.textColor)
                             
-                            Text("\(String(format: "%.0f", height)) CM")
+                            Text("\(String(format: "%.0f", userBMI.height)) CM")
                                 .font(.system(.title2, design: .rounded))
                                 .foregroundColor(.white)
                             
-                            Slider(value: $height, in: 50...250)
+                            Slider(value: $userBMI.height, in: 50...250)
                                 .frame(width: metrics.size.width * 0.85)
                                 .tint(C.customColors.textColor)
                         }
@@ -56,11 +58,11 @@ struct CalculateView: View {
                                 .font(.title3.bold())
                                 .foregroundColor(C.customColors.textColor)
                             
-                            Text("\(String(format: "%.0f", weight)) KG")
+                            Text("\(String(format: "%.0f", userBMI.weight)) KG")
                                 .font(.system(.title2, design: .rounded))
                                 .foregroundColor(.white)
                             
-                            Slider(value: $weight, in: 1...250)
+                            Slider(value: $userBMI.weight, in: 1...250)
                                 .frame(width: metrics.size.width * 0.85)
                                 .tint(C.customColors.textColor)
                         }
@@ -68,7 +70,17 @@ struct CalculateView: View {
                     
                     Spacer().frame(height: 100)
                     
-                    CustomButton(text: "Calculate", buttonColor: C.customColors.buttonColor, textColor: C.customColors.textColor)
+                    // Calculate Button component
+                    Button {
+                        userBMI.calculateBMI(userHeight: userBMI.height, userWeight: userBMI.weight)
+                        self.showResultView.toggle()
+                    } label: {
+                        CustomButton(text: "Calculate", buttonColor: C.customColors.buttonColor, textColor: C.customColors.textColor)
+                    }
+                    .sheet(isPresented: $showResultView) {
+                       ResultsView(bmi: userBMI)
+                    }
+                    
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
