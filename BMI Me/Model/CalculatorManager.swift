@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct CalculatorManager {
     
@@ -27,8 +28,8 @@ struct CalculatorManager {
             bmi = BMI(
                 value: bmiValue,
                 classification: .underweight,
-                advice: "",
-                color: .white,
+                advice: "You are underweight and may need to put on some weight. Please consult a medical professional for advice.",
+                color: C.classificationColors.underweight,
                 height: userHeight,
                 weight: userWeight
             )
@@ -36,8 +37,8 @@ struct CalculatorManager {
             self.bmi = BMI(
                 value: bmiValue,
                 classification: .normal,
-                advice: "You are healthy.",
-                color: .white,
+                advice: "Your weight is healthy for your height. You can maintain your current calorie intake and activity level.",
+                color: C.classificationColors.normal,
                 height: userHeight,
                 weight: userWeight
             )
@@ -45,8 +46,8 @@ struct CalculatorManager {
             bmi = BMI(
                 value: bmiValue,
                 classification: .overweight,
-                advice: "",
-                color: .white,
+                advice: "You are slightly overweight. You are advised to lose some weight and consult a medical professional for advice.",
+                color: C.classificationColors.overweight,
                 height: userHeight,
                 weight: userWeight
             )
@@ -54,8 +55,8 @@ struct CalculatorManager {
             bmi = BMI(
                 value: bmiValue,
                 classification: .obese,
-                advice: "",
-                color: .white,
+                advice: "You are heavily overweight. If you do not lose weight, it may cause health issues. It is recommended to consult a medical professional for advice.",
+                color: C.classificationColors.obese,
                 height: userHeight,
                 weight: userWeight
             )
@@ -63,8 +64,8 @@ struct CalculatorManager {
             bmi = BMI(
                 value: bmiValue,
                 classification: .extremelyObese,
-                advice: "",
-                color: .white,
+                advice: "Your health is at risk. It is heavily recommended to consult a medical professional for advice on losing weight.",
+                color: C.classificationColors.extremelyObese,
                 height: userHeight,
                 weight: userWeight
             )
@@ -76,9 +77,26 @@ struct CalculatorManager {
         return bmi?.value ?? 0
     }
     
+    // Get the BMI Classification
+    func getBMIClassification() -> weightClassifications {
+        return bmi?.classification ?? .unknownError
+    }
+    
     // Get the BMI Advice
     func getBMIAdvice() -> String {
         return bmi?.advice ?? "No BMI Found"
     }
-
+    
+    // Get the BMI Color
+    func getBMIColor() -> Color {
+        return bmi?.color ?? Color.purple
+    }
+    
+    // Get the arrow spacing
+    func getArrowSpacing(width: CGFloat) -> CGFloat {
+        let value = CGFloat(getBMIValue())
+        let spacing = width * (value / 45)
+        return spacing
+    }
+    
 }

@@ -22,4 +22,5 @@ enum weightClassifications {
     case overweight
     case obese
     case extremelyObese
+    case unknownError
 }
