@@ -99,4 +99,23 @@ struct CalculatorManager {
         return spacing
     }
     
+    // Get BMI Classification as string
+    func getBMIClassificationString() -> String {
+        let classification = bmi?.classification ?? .unknownError
+        
+        switch classification {
+        case .underweight:
+            return "Underweight"
+        case .normal:
+            return "Healthy"
+        case .overweight:
+            return "Overweight"
+        case .obese:
+            return "Obese"
+        case .extremelyObese:
+            return "Extremely Obese"
+        default:
+            return "Unknown"
+        }
+    }
 }

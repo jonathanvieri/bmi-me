@@ -34,7 +34,7 @@ struct ResultsView: View {
                         }
                     }
                     .padding(.trailing, 20)
-                    Spacer()
+                    Spacer().frame(height: 50)
                     
                     // BMI Graph component
                     let customWidth = metrics.size.width / 1.3
@@ -77,7 +77,7 @@ struct ResultsView: View {
                             .frame(width: customWidth, alignment: .leading)
                     }
                     
-                    Spacer().frame(height: 25)
+                    Spacer().frame(height: 15)
                     
                     // BMI Value component
                     VStack {
@@ -88,6 +88,26 @@ struct ResultsView: View {
                         Text("\(String(format: "%.1f", bmi.getBMIValue()))")
                             .font(.system(size: 48).bold())
                             .foregroundColor(C.customColors.textColor)
+                    }
+                    
+                    Spacer().frame(height: 20)
+                    
+                    // BMI Summary component
+                    VStack(spacing: 30) {
+                        Text("You are ")
+                            .font(.title2)
+                            .foregroundColor(C.customColors.textColor) +
+                        
+                        Text("\(bmi.getBMIClassificationString())")
+                            .font(.title2.bold())
+                            .foregroundColor(bmi.getBMIColor())
+                    
+                    // BMI Advice Component
+                    Text("\(bmi.getBMIAdvice())")
+                        .fixedSize(horizontal: false, vertical: true)
+                        .font(.title3.weight(.medium))
+                        .foregroundColor(C.customColors.textColor)
+                        .frame(width: customWidth)
                     }
                     
                     Spacer()
