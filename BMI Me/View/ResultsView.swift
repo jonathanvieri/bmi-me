@@ -10,6 +10,8 @@ import SwiftUI
 struct ResultsView: View {
     @Environment(\.dismiss) var dismiss
     @State var bmi: CalculatorManager
+    @State private var showAlert = false
+    @State private var showError = false
     
     var body: some View {
         GeometryReader { metrics in
@@ -21,20 +23,22 @@ struct ResultsView: View {
                 VStack {
                     
                     // Dismiss sheet button
-                    HStack {
-                        Spacer()
-                        Button {
-                            dismiss()
-                        } label: {
-                            Image(systemName: "xmark.circle.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .foregroundColor(C.customColors.buttonColor)
-                                .frame(width: metrics.size.width * 0.10, height: metrics.size.height * 0.10)
+                    Group {
+                        HStack {
+                            Spacer()
+                            Button {
+                                dismiss()
+                            } label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundColor(C.customColors.buttonColor)
+                                    .frame(width: metrics.size.width * 0.10, height: metrics.size.height * 0.10)
+                            }
                         }
+                        .padding(.trailing, 20)
+                        Spacer().frame(height: 50)
                     }
-                    .padding(.trailing, 20)
-                    Spacer().frame(height: 50)
                     
                     // BMI Graph component
                     let customWidth = metrics.size.width / 1.3
@@ -67,7 +71,7 @@ struct ResultsView: View {
                     // If its higher than 45, the arrow will stop at the end of the bar
                     if (bmi.getBMIValue() <= 45) {
                         Image(systemName: "arrowtriangle.up.fill")
-                            .foregroundColor(C.customColors.buttonColor)
+                            .foregroundColor(bmi.getBMIColor())
                             .padding(.leading, bmi.getArrowSpacing(width: customWidth))
                             .frame(width: customWidth, alignment: .leading)
                     } else {
@@ -93,21 +97,52 @@ struct ResultsView: View {
                     Spacer().frame(height: 20)
                     
                     // BMI Summary component
-                    VStack(spacing: 30) {
-                        Text("You are ")
-                            .font(.title2)
-                            .foregroundColor(C.customColors.textColor) +
+                    Group {
+                        VStack(spacing: 30) {
+                            Text("You are ")
+                                .font(.title2)
+                                .foregroundColor(C.customColors.textColor) +
+                            
+                            Text("\(bmi.getBMIClassificationString())")
+                                .font(.title2.bold())
+                                .foregroundColor(bmi.getBMIColor())
+                            
+                            // BMI Advice Component
+                            Text("\(bmi.getBMIAdvice())")
+                                .fixedSize(horizontal: false, vertical: true)
+                                .font(.title3.weight(.medium))
+                                .foregroundColor(C.customColors.textColor)
+                                .frame(width: customWidth)
+                        }
                         
-                        Text("\(bmi.getBMIClassificationString())")
-                            .font(.title2.bold())
-                            .foregroundColor(bmi.getBMIColor())
+                        Spacer().frame(height: 80)
+                    }
                     
-                    // BMI Advice Component
-                    Text("\(bmi.getBMIAdvice())")
-                        .fixedSize(horizontal: false, vertical: true)
-                        .font(.title3.weight(.medium))
-                        .foregroundColor(C.customColors.textColor)
-                        .frame(width: customWidth)
+                    // Error message if value bigger than 45
+                    if showError {
+                        Text("Unable to save BMI higher than 45")
+                            .foregroundColor(.white)
+                            .font(.title3)
+                            .transition(.scale)
+                    }
+                    
+                    // Save result component
+                    Button {
+                        if bmi.getBMIValue() <= 45{
+                            showAlert = true
+                        } else {
+                            withAnimation {
+                                showError = true
+                            }
+                        }
+                        
+                    } label: {
+                        CustomButton(text: "Save Result", buttonColor: C.customColors.buttonColor, textColor: C.customColors.textColor)
+                    }
+                    .alert("BMI Saved", isPresented: $showAlert) {
+                        Button("Ok") {
+                            dismiss()
+                        }
                     }
                     
                     Spacer()

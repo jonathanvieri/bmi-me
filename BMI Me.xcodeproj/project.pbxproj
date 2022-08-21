@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A724C5BE28B119DC00E6BEB2 /* SavedResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A724C5BD28B119DC00E6BEB2 /* SavedResultsView.swift */; };
 		A7DCC4BF28ABA49D0077BE01 /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DCC4BE28ABA49D0077BE01 /* BMI.swift */; };
 		A7DCC4C528ABB3AC0077BE01 /* CalculatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DCC4C428ABB3AC0077BE01 /* CalculatorManager.swift */; };
 		A7E919FC28A3AB2100FE4DD2 /* BMI_MeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E919FB28A3AB2100FE4DD2 /* BMI_MeApp.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A724C5BD28B119DC00E6BEB2 /* SavedResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsView.swift; sourceTree = "<group>"; };
 		A7DCC4BE28ABA49D0077BE01 /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
 		A7DCC4C428ABB3AC0077BE01 /* CalculatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorManager.swift; sourceTree = "<group>"; };
 		A7E919F828A3AB2100FE4DD2 /* BMI Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMI Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 				A7E91A1028A3B52B00FE4DD2 /* CalculateView.swift */,
 				A7E91A0E28A3B4E900FE4DD2 /* HomeView.swift */,
 				A7E91A0C28A3AD0000FE4DD2 /* ResultsView.swift */,
+				A724C5BD28B119DC00E6BEB2 /* SavedResultsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				A7E91A0F28A3B4E900FE4DD2 /* HomeView.swift in Sources */,
 				A7E91A1D28A534E200FE4DD2 /* CustomButton.swift in Sources */,
 				A7DCC4BF28ABA49D0077BE01 /* BMI.swift in Sources */,
+				A724C5BE28B119DC00E6BEB2 /* SavedResultsView.swift in Sources */,
 				A7E91A0D28A3AD0000FE4DD2 /* ResultsView.swift in Sources */,
 				A7E919FC28A3AB2100FE4DD2 /* BMI_MeApp.swift in Sources */,
 				A7E91A1128A3B52B00FE4DD2 /* CalculateView.swift in Sources */,

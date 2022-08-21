@@ -32,7 +32,7 @@ struct HomeView: View {
                     Spacer().frame(height: 50)
                     
                     NavigationLink {
-                        // Results View
+                        SavedResultsView()
                     } label: {
                         CustomButton(text: "View Results", buttonColor: C.customColors.buttonColor, textColor: C.customColors.textColor)
                     }
