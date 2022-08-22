@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A724C5BE28B119DC00E6BEB2 /* SavedResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A724C5BD28B119DC00E6BEB2 /* SavedResultsView.swift */; };
+		A72E646528B3883800EC08F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72E646428B3883800EC08F2 /* LaunchScreen.storyboard */; };
 		A7DCC4BF28ABA49D0077BE01 /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DCC4BE28ABA49D0077BE01 /* BMI.swift */; };
 		A7DCC4C528ABB3AC0077BE01 /* CalculatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DCC4C428ABB3AC0077BE01 /* CalculatorManager.swift */; };
 		A7E919FC28A3AB2100FE4DD2 /* BMI_MeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E919FB28A3AB2100FE4DD2 /* BMI_MeApp.swift */; };
@@ -22,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		A724C5BD28B119DC00E6BEB2 /* SavedResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsView.swift; sourceTree = "<group>"; };
+		A724C5C628B3861A00E6BEB2 /* BMI-Me-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "BMI-Me-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A72E646428B3883800EC08F2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7DCC4BE28ABA49D0077BE01 /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
 		A7DCC4C428ABB3AC0077BE01 /* CalculatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorManager.swift; sourceTree = "<group>"; };
 		A7E919F828A3AB2100FE4DD2 /* BMI Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMI Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,10 +76,12 @@
 		A7E919FA28A3AB2100FE4DD2 /* BMI Me */ = {
 			isa = PBXGroup;
 			children = (
+				A724C5C628B3861A00E6BEB2 /* BMI-Me-Info.plist */,
 				A7E919FB28A3AB2100FE4DD2 /* BMI_MeApp.swift */,
 				A7E91A1228A3BA9E00FE4DD2 /* Constants.swift */,
 				A7E91A0A28A3ACA700FE4DD2 /* View */,
 				A7E91A0928A3AC9E00FE4DD2 /* Model */,
+				A72E646428B3883800EC08F2 /* LaunchScreen.storyboard */,
 				A7E919FF28A3AB2200FE4DD2 /* Assets.xcassets */,
 				A7E91A0128A3AB2200FE4DD2 /* Preview Content */,
 			);
@@ -170,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72E646528B3883800EC08F2 /* LaunchScreen.storyboard in Resources */,
 				A7E91A0328A3AB2200FE4DD2 /* Preview Assets.xcassets in Resources */,
 				A7E91A0028A3AB2200FE4DD2 /* Assets.xcassets in Resources */,
 			);
@@ -322,9 +328,10 @@
 				DEVELOPMENT_TEAM = 6Y7VSJ5XSR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BMI-Me-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -336,7 +343,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -351,9 +358,10 @@
 				DEVELOPMENT_TEAM = 6Y7VSJ5XSR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BMI-Me-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -365,7 +373,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
